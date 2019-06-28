@@ -44,7 +44,7 @@ Today's project is to use the `ClockView` we built today and recreate the World 
 * Create an extension of the view controller class at the bottom of the file for protocol conformance. Make the class conform to the delegate you just defined, and implement the required function (just stub it out for now).
 * Create an array property in this view controller to hold the selected time zone identifiers the users picks from the other view. The identifiers are of type `String`.
 * Give the view a title that will display in the navigation bar.
-* The `TimeZone` class has an accessor called `current` that will fetch the user's current time zone. Use it and a property of that time zone called `identifier` to fetch the ID of the current time zone. Append that to the array you created above in `viewDidLoad`. This will cause the view to always load with 1 cell showing the user's current zone and time.
+* The `TimeZone` class has a property called `current` that will fetch the user's current time zone. Once you have the user's current time zone, access a property on that time zone object called `identifier` to fetch the ID. Append that to the array you created above in `viewDidLoad`. The ID will be used by the tableview to always load a cell showing the user's current zone and time. That way, even if no other time zones have been selected by the user, the tableview will not be empty.
 * Configure the table view to display cells from the array you created above.
 * In `tableView(_:cellForRowAt:)`:
     * Dequeue a cell using the identifier you set in the storyboard (also the cell will need to be cast as the custom type you created).
