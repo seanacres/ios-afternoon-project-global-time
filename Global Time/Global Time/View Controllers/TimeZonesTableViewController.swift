@@ -9,28 +9,38 @@
 import UIKit
 
 class TimeZonesTableViewController: UITableViewController {
-
-    let knownTimeZoneIdentifiers: [String] = TimeZone.knownTimeZoneIdentifiers
+    
+    var timezones: [(id: String, name: String)] {
+        let knownTimeZoneIdentifiers: [String] = TimeZone.knownTimeZoneIdentifiers
+        var sortedTimezones: [(id: String, name: String)] = []
+        
+        for timeZoneID in knownTimeZoneIdentifiers {
+            let timeZoneString = timeZoneID.components(separatedBy: "/").last?.capitalized.replacingOccurrences(of: "_", with: " ")
+            sortedTimezones.append((timeZoneID, timeZoneString!))
+        }
+        
+        sortedTimezones.sort(by: {$0.name < $1.name})
+        return sortedTimezones
+    }
+    
     var delegate: TimeZoneDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return knownTimeZoneIdentifiers.count
+        return timezones.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeZoneCell", for: indexPath)
 
-        let timezoneID = knownTimeZoneIdentifiers[indexPath.row]
-        cell.textLabel?.text = timezoneID.components(separatedBy: "/").last?.capitalized
+        let timezone = timezones[indexPath.row]
+        cell.textLabel?.text = timezone.name
 
         return cell
     }
@@ -39,7 +49,7 @@ class TimeZonesTableViewController: UITableViewController {
         guard let delegate = delegate else { return }
         
         tableView.deselectRow(at: indexPath, animated: false)
-        delegate.didChooseTimeZone(knownTimeZoneIdentifiers[indexPath.row])
+        delegate.didChooseTimeZone(timezones[indexPath.row].id)
     }
 
     @IBAction func cancelButtonTapped(_ sender: Any) {
