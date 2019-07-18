@@ -25,17 +25,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="RWU-gJ-JSd">
-                                            <rect key="frame" x="20" y="5" width="371" height="90"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RWU-gJ-JSd">
+                                            <rect key="frame" x="20" y="5" width="374" height="90"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Zone Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFM-Kq-8kg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="131" height="90"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="274" height="90"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5z-kD-y9Q" customClass="ClockView" customModule="Global_Time" customModuleProvider="target">
-                                                    <rect key="frame" x="281" y="0.0" width="90" height="90"/>
+                                                    <rect key="frame" x="284" y="0.0" width="90" height="90"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="Px4-Y9-YOt"/>
@@ -51,6 +51,7 @@
                                     <constraints>
                                         <constraint firstItem="RWU-gJ-JSd" firstAttribute="centerY" secondItem="ZSp-rl-PnB" secondAttribute="centerY" id="32K-ER-kIs"/>
                                         <constraint firstItem="RWU-gJ-JSd" firstAttribute="leading" secondItem="ZSp-rl-PnB" secondAttribute="leading" constant="20" id="KD5-D1-BlH"/>
+                                        <constraint firstAttribute="trailing" secondItem="r5z-kD-y9Q" secondAttribute="trailing" constant="20" id="uCE-hE-uu1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
