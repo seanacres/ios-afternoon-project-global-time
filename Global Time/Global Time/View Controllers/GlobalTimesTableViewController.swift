@@ -43,6 +43,13 @@ class GlobalTimesTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            selectedTimeZones.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
 
     // MARK: - Navigation
 
