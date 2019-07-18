@@ -109,7 +109,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="jsN-cK-PTX">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="6Cn-rx-8Ky"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="6Cn-rx-8Ky">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="wqf-CC-uHS" id="8DD-zQ-vce"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrh-Zl-VVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
