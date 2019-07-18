@@ -30,14 +30,16 @@ class TimeZonesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeZoneCell", for: indexPath)
 
         let timezoneID = knownTimeZoneIdentifiers[indexPath.row]
-        cell.textLabel?.text = timezoneID.components(separatedBy: "/").last?.uppercased()
+        cell.textLabel?.text = timezoneID.components(separatedBy: "/").last?.capitalized
 
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let delegate = delegate else { return }
+        
         tableView.deselectRow(at: indexPath, animated: false)
-        delegate?.didChooseTimeZone(knownTimeZoneIdentifiers[indexPath.row])
+        delegate.didChooseTimeZone(knownTimeZoneIdentifiers[indexPath.row])
     }
 
     @IBAction func cancelButtonTapped(_ sender: Any) {

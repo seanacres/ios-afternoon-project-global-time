@@ -16,7 +16,6 @@ class GlobalTimesTableViewController: UITableViewController {
 
     var selectedTimeZones: [String] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,7 +39,7 @@ class GlobalTimesTableViewController: UITableViewController {
 
         let timeZoneID = selectedTimeZones[indexPath.row]
         cell.clockView.timezone = TimeZone(identifier: timeZoneID)
-        cell.timeZoneName.text = timeZoneID.components(separatedBy: "/").last?.uppercased()
+        cell.timeZoneName.text = timeZoneID.components(separatedBy: "/").last?.capitalized
 
         return cell
     }
@@ -48,7 +47,7 @@ class GlobalTimesTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let timezoneTableVC = segue.destination.presentedViewController as? TimeZonesTableViewController else { return }
+        guard let timezoneTableVC = segue.destination.children.first as? TimeZonesTableViewController else { return }
         timezoneTableVC.delegate = self
     }
 }

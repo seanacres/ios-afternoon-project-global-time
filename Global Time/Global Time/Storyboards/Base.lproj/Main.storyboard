@@ -76,7 +76,7 @@
             </objects>
             <point key="canvasLocation" x="605.79710144927537" y="105.80357142857143"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Time Zones-->
         <scene sceneID="23n-b5-n46">
             <objects>
                 <tableViewController id="wqf-CC-uHS" customClass="TimeZonesTableViewController" customModule="Global_Time" customModuleProvider="target" sceneMemberID="viewController">
@@ -108,7 +108,7 @@
                             <outlet property="delegate" destination="wqf-CC-uHS" id="43B-jB-m4v"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="jsN-cK-PTX">
+                    <navigationItem key="navigationItem" title="Time Zones" id="jsN-cK-PTX">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="6Cn-rx-8Ky">
                             <connections>
                                 <action selector="cancelButtonTapped:" destination="wqf-CC-uHS" id="8DD-zQ-vce"/>
