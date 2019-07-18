@@ -39,7 +39,8 @@ class GlobalTimesTableViewController: UITableViewController {
 
         let timeZoneID = selectedTimeZones[indexPath.row]
         cell.clockView.timezone = TimeZone(identifier: timeZoneID)
-        cell.timeZoneName.text = timeZoneID.components(separatedBy: "/").last?.capitalized
+        
+        cell.timeZoneName.text = timeZoneID.components(separatedBy: "/").last?.capitalized.replacingOccurrences(of: "_", with: " ")
 
         return cell
     }
