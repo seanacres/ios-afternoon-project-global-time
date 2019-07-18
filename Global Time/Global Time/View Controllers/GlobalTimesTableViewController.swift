@@ -55,6 +55,8 @@ class GlobalTimesTableViewController: UITableViewController {
 
 extension GlobalTimesTableViewController: TimeZoneDelegate {
     func didChooseTimeZone(_ timezone: String) {
-        
+        dismiss(animated: true, completion: nil)
+        selectedTimeZones.append(timezone)
+        tableView.reloadData()
     }
 }
